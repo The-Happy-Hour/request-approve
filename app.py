@@ -2,16 +2,9 @@ from pyrogram import Client, filters
 import asyncio
 from pyrogram.errors import FloodWait
 
-API_ID = 
-API_HASH = 
+app = Client("my", api_id=API_ID, api_hash=API_HASH)
 
-app = Client(
-    "my_userbot",
-    api_id=API_ID,
-    api_hash=API_HASH
-)
-
-@app.on_message(filters.command("approve"))
+@app.on_message(filters.command("app"))
 async def approve_cmd(client, message):
     chat_id = message.chat.id
     approved = 0
